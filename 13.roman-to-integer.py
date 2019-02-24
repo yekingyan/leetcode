@@ -87,7 +87,7 @@ class Solution:
             'CM': 900,
         }
         # 是否有特殊情况
-        s_list = [i for i in s]
+        s_list = list(s)
         special_index = []
         for index in range(len(s_list)-1):
             if roman[s_list[index]] < roman[s_list[index+1]]:
