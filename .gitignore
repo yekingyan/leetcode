@@ -1,3 +1,6 @@
-
-.idea/workspace.xml
-*.iml
+.idea
+.vscode
+log.txt
+.idea/*
+VUE/vueJS/.idea
+VUE/vueJS/.idea/*
