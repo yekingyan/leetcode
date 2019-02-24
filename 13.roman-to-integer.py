@@ -65,6 +65,8 @@
 # 解释: M = 1000, CM = 900, XC = 90, IV = 4.
 # 
 #
+
+
 class Solution:
     def romanToInt(self, s: 'str') -> 'int':
         roman = {
@@ -84,8 +86,6 @@ class Solution:
             'CD': 400,
             'CM': 900,
         }
-        nums = 0
-
         # 是否有特殊情况
         s_list = [i for i in s]
         special_index = []
