@@ -74,23 +74,18 @@ class Solution:
             """
             if len(s_list) == 0:
                 return True
-            elif len(s_list) and operation:
+            elif operation:
                 return False
             inside = []
+            # 找到最底层成对的左括号
             for i, item in enumerate(s_list):
                 if i+1 < len(s_list) and brackets.get(item) == s_list[i+1]:
                     inside.append(i)
+            # 成对删除刚找到的括号
             for i, n in enumerate(inside):
-                p1 = s_list.pop(n-2*i)
-                p2 = s_list.pop(n-2*i)
+                s_list.pop(n-2*i)
+                s_list.pop(n-2*i)
             if len(inside) == 0:
                 operation = True
             return _delete_inside(s_list, operation)
         return _delete_inside(s_list)
-
-
-if __name__ == '__main__':
-    a = Solution()
-    strs = '[{}{[]}]'
-    b = a.isValid(strs)
-    print(b)
