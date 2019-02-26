@@ -60,16 +60,12 @@
 
 class Solution:
     def removeElement(self, nums: 'List[int]', val: int) -> int:
-        nums.sort()
-        count = 0
-        end = 0
+        pop_list = []
         for i, num in enumerate(nums):
             if num == val:
-                end = i
-                count += 1
-        for index in range(end, end-count, -1):
-            nums.pop(index)
-        print(nums)
+                pop_list.insert(0, i)
+        for i in pop_list:
+            nums.pop(i)
         return len(nums)
 
 
