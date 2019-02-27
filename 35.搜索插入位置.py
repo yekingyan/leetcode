@@ -55,20 +55,24 @@ class Solution:
 if __name__ == '__main__':
 
     s = Solution()
+    func = s.searchInsert
 
-    def test(condition, e):
-        if not condition:
-            print(e)
-
-
-    tests = [
+    param2 = [
         [([1, 3, 5, 6], 5), 2],
         [([1, 3, 5, 6], 2), 1],
         [([1, 3, 5, 6], 0), 0],
         [([1, 3, 5, 6], 7), 4],
     ]
-    for index, i in enumerate(tests):
-        hays = i[0][0]
-        needle = i[0][1]
-        exp = i[1]
-        test(s.searchInsert(hays, needle) == exp, f'err: {index}-{i}')
+
+    def test(condition, e):
+        if not condition:
+            print(e)
+
+    def two_param_to_test(_function, _params):
+        for index, i in enumerate(_params):
+            param1 = i[0][0]
+            param2 = i[0][1]
+            exp = i[1]
+            test(_function(param1, param2) == exp, f'err: {index}-{i}')
+
+    two_param_to_test(func, param2)
