@@ -57,6 +57,16 @@ def reverse3(x):
     else:
         return re_num
 
+def reverse4(num: int) -> int:
+  str_n = str(num)
+  reverse_str = ''.join(reversed(str_n))
+  if '-' in reverse_str:
+    reverse_n = int('-' + reverse_str[:-1])
+    return reverse_n if reverse_n > -2**31 else 0
+  else:
+    reverse_n = int(reverse_str)
+    return reverse_n if reverse_n < 2**31-1 else 0
+
 
 def test():
     nums = [
@@ -68,11 +78,13 @@ def test():
         (-23456789, -98765432),
         (-12345678, -87654321),
         (-1375555, -5555731),
+        (-2**32, 0),
+        (2**31, 0),
     ]
     for num in nums:
         original, expect = num
         # exp = return_num(original)
-        exp = reverse(original)
+        exp = reverse4(original)
         # exp = reverse3(original)
         e = "returnNum error,初始值：({}).计算值：({}).期待值：({})".format(original, exp, expect)
         assert exp == expect, e
