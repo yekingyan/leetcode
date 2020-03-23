@@ -2,6 +2,7 @@
 # @lc app=leetcode.cn id=15 lang=python3
 #
 # [15] 三数之和
+# 一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 
 #
 class Solution:
     def threeSum1(self, nums: List[int]) -> List[List[int]]:
